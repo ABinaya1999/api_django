@@ -1,12 +1,10 @@
 from django.contrib import admin
 from django.urls import path, include
-from rest_framework.routers import DefaultRouter
 from .views import *
 
-router = DefaultRouter()
-router.register('studentapi', StudentApi.as_view(), basename='studentapi')
 
 
 urlpatterns = [
-     path('', include(router.urls)),
+     path('register/', UserRegiserationView.as_view(), name='register'),
+     path('login/', UserLoginView.as_view(), name='login')
 ]
