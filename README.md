@@ -1,1 +1,2 @@
-# api_django
+# authentication api in django using JWT
+
