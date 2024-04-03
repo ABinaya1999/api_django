@@ -5,9 +5,11 @@ class UserRenderer(renderers.JSONRenderer):
     charset = 'utf-8'
     def render(self, data, accepted_media_type=None, renderer_context=None):
         response = ''
+        print(data)
+        print(str(data))
         if 'ErrorDetail' in str(data):
-            response = json.dump({'errors':data})
+            response = json.dumps({'errors':data})
         else:
             response=json.dumps(data)
-        return super().render(data, accepted_media_type, renderer_context)
+        return response
     
